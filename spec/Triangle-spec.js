@@ -1,26 +1,41 @@
 import { Triangle } from './../src/triangle';
 describe('Triangle', function()
 {
-  var reusableTriangle;
+  var tempTriangle;
 
   beforeEach(function() {
-    reusableTriangle = new Triangle(5, 5, 5);
+    tempTriangle = new Triangle(5, 5, 5);
   });
 
   it('should show how beforeEach() works', function() {
-    console.log(reusableTriangle);
+    console.log(tempTriangle);
   });
 
   it('should test whether a Triangle has three sides', function() {
-    var triangle = new Triangle(3,4,5);
-    expect(triangle.side1).toEqual(3);
-    expect(triangle.side2).toEqual(4);
-    expect(triangle.side3).not.toEqual(6);
+    tempTriangle.Set(3,4,5);
+    expect(tempTriangle.side1).toEqual(3);
+    expect(tempTriangle.side2).toEqual(4);
+    expect(tempTriangle.side3).not.toEqual(6);
   });
 
   it('should correctly determine whether three lengths can be made into a triangle', function() {
-   var notTriangle = new Triangle(3,9,22);
-   expect(notTriangle.checkType()).toEqual("not a triangle");
- });
+    tempTriangle.Set(3,9,22);
+    expect(tempTriangle.Type()).toEqual("Not a Triangle");
+  });
+
+  it('should determine type of triangle', function() {
+    tempTriangle.Set(3,3,3);
+    expect(tempTriangle.Type()).toEqual("Equalateral");
+  });
+
+  it('should determine type of triangle', function() {
+    tempTriangle.Set(3,4,3);
+    expect(tempTriangle.Type()).toEqual("Isosceles");
+  });
+
+  it('should determine type of triangle', function() {
+    tempTriangle.Set(3,4,6);
+    expect(tempTriangle.Type()).toEqual("Scalene");
+  });
 
 });
