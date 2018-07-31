@@ -1,4 +1,4 @@
-import {  } from './Triangle';
+//import { Triangle } from './triangle';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
@@ -6,4 +6,3 @@ import './styles.css';
 $(function()
 {
 });
-
