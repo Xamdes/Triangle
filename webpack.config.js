@@ -16,8 +16,14 @@ module.exports =
   devServer: {
     contentBase: './dist'
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: true
+      })
+    ]
+  },
   plugins: [
-    new UglifyJsPlugin({sourceMap: true}),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
