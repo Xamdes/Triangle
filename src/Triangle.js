@@ -1,9 +1,14 @@
-export function Triangle(newSide1, newSide2, newSide3)
+export class Triangle
 {
-  this.side1 = newSide1;
-  this.side2 = newSide2;
-  this.side3 = newSide3;
-  this.Type = function()
+  constructor(newSide1, newSide2, newSide3)
+  {
+    this.side1 = newSide1;
+    this.side2 = newSide2;
+    this.side3 = newSide3;
+
+  }
+
+  Type()
   {
     if((this.side1 === this.side2) && (this.side2 === this.side3))
     {
@@ -17,11 +22,11 @@ export function Triangle(newSide1, newSide2, newSide3)
     {
       return "Scalene";
     }
-  };
-}
-
-Triangle.prototype.checkType = function() {
-  if ((this.side1 > (this.side2 + this.side3)) || (this.side2 > (this.side1 + this.side3)) || (this.side3 > (this.side1 + this.side2))) {
-    return "not a triangle";
   }
-};
+
+  checkType() {
+    if ((this.side1 > (this.side2 + this.side3)) || (this.side2 > (this.side1 + this.side3)) || (this.side3 > (this.side1 + this.side2))) {
+      return "not a triangle";
+    }
+  }
+}
